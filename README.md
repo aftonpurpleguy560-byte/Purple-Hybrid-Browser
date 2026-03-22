@@ -12,7 +12,7 @@ Chrome'un hızı, Brave'in gizliliği ve Opera GX'in oyuncu odaklı kontrol meka
 - **🚀 Splash Screen:** Havalı bir açılış animasyonu.
 
 ## 🛠️ Kurulum
-1. Bu repoyu klonlayın: `git clone https://github.com/kullaniciadin/repo-ismin.git`
+1. Bu repoyu klonlayın: `git clone https://github.com/aftonpurpleguy560-byte/Purple-Hybrid-Browser.git`
 2. `index.html` dosyasını tarayıcıda açın veya Electron.js ile paketleyin.
 
 ## 📱 Platform Desteği
