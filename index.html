@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purpleguy Browser - Tablet Power</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS dosyasını henüz bağlamadıysan veya test etmek istersen buraya ekleyebilirsin */
+    </style>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1 class="glitch">PURPLEGUY</h1>
+            <p>Sistem Yükleniyor...</p>
+            <div class="loader"></div>
+            <small>Purpleguy © 2026 - tablet power</small>
+        </div>
+    </div>
+
+    <div id="browser-container">
+        <nav class="sidebar">
+            <div class="logo-area">PG</div>
+            <button class="nav-btn" title="Ana Sayfa">🏠</button>
+            <button class="nav-btn" onclick="toggleHackerMode()" title="Hacker Modu">👤</button>
+            <button class="nav-btn" onclick="togglePanel()" title="GX Control">⚡</button>
+            <div class="spacer"></div>
+            <button class="nav-btn" title="Ayarlar">⚙️</button>
+        </nav>
+
+        <main class="main-content">
+            <header class="toolbar">
+                <div class="nav-arrows">
+                    <button class="tool-btn">⬅</button>
+                    <button class="tool-btn">➡</button>
+                    <button class="tool-btn">🔄</button>
+                </div>
+                <div class="address-bar">
+                    <input type="text" id="url-input" placeholder="URL girin veya arama yapın...">
+                </div>
+                <button id="go-btn" class="go-btn">GİT</button>
+            </header>
+
+            <div class="webview-container">
+                <webview id="view" src="https://www.google.com"></webview>
+            </div>
+        </main>
+
+        <div id="gx-panel" class="side-panel">
+            <div class="panel-header">
+                <h3>GX & Brave Control</h3>
+                <button onclick="togglePanel()" class="close-btn">×</button>
+            </div>
+            <hr class="panel-divider">
+            
+            <div class="control-item">
+                <div class="label-group">
+                    <span>Brave Shields</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <small>Reklamlar ve izleyiciler engelleniyor.</small>
+            </div>
+
+            <div class="control-item">
+                <p>RAM Limiter: <span id="ram-val" class="neon-text">2.0 GB</span></p>
+                <input type="range" min="1" max="16" value="2" class="range-input" id="ram-range">
+            </div>
+
+            <div class="control-item">
+                <p>CPU Limiter: <span id="cpu-val" class="neon-text">30%</span></p>
+                <input type="range" min="10" max="100" value="30" class="range-input" id="cpu-range">
+            </div>
+
+            <div class="footer-note">
+                Purpleguy © 2026
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
+
