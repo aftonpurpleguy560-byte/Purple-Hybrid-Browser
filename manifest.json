@@ -1,0 +1,22 @@
+{
+  "short_name": "PG Browser",
+  "name": "Purpleguy Hybrid Browser",
+  "description": "Chrome, Brave ve Opera GX özellikli hibrit tarayıcı.",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192x192/a855f7/ffffff?text=PG",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://via.placeholder.com/512x512/a855f7/ffffff?text=Purpleguy",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#000000",
+  "display": "standalone",
+  "theme_color": "#a855f7"
+}
+
