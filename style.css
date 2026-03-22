@@ -1,0 +1,234 @@
+/* --- TEMEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Siyah Arka Plan */
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- 1. SPLASH SCREEN (Açılış Ekranı) --- */
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease;
+}
+
+.splash-content h1 {
+    font-size: 3rem;
+    color: #a855f7; /* Purpleguy Moru */
+    text-shadow: 0 0 10px #a855f7, 0 0 20px #7c3aed;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+.loader {
+    border: 3px solid #1a1a1a;
+    border-top: 3px solid #a855f7;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 0.8s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- 2. ANA YAPI (LAYOUT) --- */
+#browser-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* SIDEBAR (Yan Menü) */
+.sidebar {
+    width: 65px;
+    background: #0a0a0a;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    z-index: 10;
+}
+
+.logo-area {
+    color: #a855f7;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px #a855f7;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #555;
+    font-size: 22px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: #a855f7;
+    transform: scale(1.1);
+}
+
+.spacer { flex-grow: 1; }
+
+/* --- 3. İÇERİK ALANI --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TOOLBAR (Üst Bar) */
+.toolbar {
+    background: #111;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #222;
+}
+
+.nav-arrows { display: flex; gap: 10px; }
+
+.tool-btn {
+    background: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.address-bar {
+    flex-grow: 1;
+}
+
+.address-bar input {
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #eee;
+    padding: 8px 15px;
+    border-radius: 20px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.address-bar input:focus {
+    border-color: #a855f7;
+}
+
+.go-btn {
+    background: #a855f7;
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* WEBVIEW ALANI */
+.webview-container {
+    flex-grow: 1;
+    background: #fff;
+}
+
+#view {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- 4. GX & BRAVE CONTROL PANEL (Sağ Panel) --- */
+.side-panel {
+    position: fixed;
+    right: -320px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(15px);
+    border-left: 2px solid #a855f7;
+    padding: 25px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+}
+
+.side-panel.active { right: 0; }
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #a855f7;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.panel-divider { border: 0; border-top: 1px solid #333; margin: 15px 0; }
+
+.control-item { margin-bottom: 30px; }
+
+.label-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.neon-text { color: #a855f7; font-weight: bold; }
+
+/* RANGE INPUT */
+.range-input {
+    width: 100%;
+    accent-color: #a855f7;
+    cursor: pointer;
+}
+
+/* SWITCH BUTTON */
+.switch { position: relative; width: 45px; height: 22px; }
+.switch input { display: none; }
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #333;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+input:checked + .slider { background: #a855f7; }
+
+/* --- 5. HACKER MODE (GİZLİ MOD) --- */
+body.hacker-mode {
+    filter: sepia(100%) hue-rotate(250deg) brightness(85%);
+}
+
+.footer-note {
+    position: absolute;
+    bottom: 20px;
+    font-size: 10px;
+    color: #444;
+}
+
